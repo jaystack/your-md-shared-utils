@@ -1,0 +1,27 @@
+{
+  "name": "your-md-shared-utils",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jaystack/your-md-shared-utils.git",
+  "author": "Balázs Horváth <balazs.horvath@guidesmiths.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:iso-logger": "yarn build:client-logger && yarn build:server-logger",
+    "build:client-logger": "babel ./isomorphic-logger/src/clientLogger.js --out-file ./isomorphic-logger/client/index.js --presets env,react",
+    "build:server-logger": "babel ./isomorphic-logger/src/serverLogger.js --out-file ./isomorphic-logger/server/index.js --presets env,react",
+    "build:request": "babel ./request/src/request.js --out-file ./request/index.js --presets env,react"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "prepper": "^1.1.0",
+    "body-parser": "^1.17.2",
+    "chalk": "^2.1.0",
+    "color-convert": "^1.9.0",
+    "hogan.js": "^3.0.2"
+  }
+}
